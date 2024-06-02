@@ -30,7 +30,7 @@ def view_cart(request):
     total_price = sum(item.product.price * item.quantity for item in cart.cartitem_set.all())
     return render(request, 'store/view_cart.html', {'cart': cart, 'total_price': total_price})
 
-#@login_required(login_url='/admin/')
+@login_required(login_url='/admin/')
 def checkout(request):
     cart = Cart.objects.get(user=request.user)
     total_price = sum(item.product.price * item.quantity for item in cart.cartitem_set.all())
