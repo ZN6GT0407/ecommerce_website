@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        window.onload = function() {
+            var redirected = false; // 添加一个变量来标记是否已经重定向
+            if (!redirected) {
+                var loginUrl = "{{ login_url }}";
+                var nextUrl = "{{ next_url }}";
+                var redirectUrl = loginUrl + '?next=' + encodeURIComponent(nextUrl);
+                // 打开一个新窗口
+                var newWindow = window.open(redirectUrl, '_blank', 'noopener,noreferrer');
+                // 标记已经重定向
+                redirected = true;
+                window.history.replaceState({}, '', '/');
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Include product_list.html content -->
+    {% include 'store/product_list.html' %}
+
+</body>
+</html>
