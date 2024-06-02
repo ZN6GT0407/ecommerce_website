@@ -119,9 +119,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-# Add this line
-LOGIN_URL = '/admin'
-
 STATIC_URL = "static1/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static1')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #for deployment
