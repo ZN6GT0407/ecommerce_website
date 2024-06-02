@@ -17,10 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from store.views import product_list,about,add_to_cart,view_cart,checkout,order_success
-from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('admin/', auth_views.LoginView.as_view(), name='login'),
     path("admin/", admin.site.urls),
     path("", product_list, name="product_list"),
     path("about/", about, name="about"),
